@@ -23,18 +23,33 @@ function totalExpenses() {
 }
 // calculate Btn event hendlar
 document.getElementById("calculateBtn").addEventListener("click", function () {
+  // for balance
   const balance = document.getElementById("balance");
+  let showBalance = balance.innerHTML;
   if (isNaN(income())) {
     console.log("geive a nlumm");
   } else if (income() > 0) {
-    balance.innerHTML = income();
+    showBalance = income();
+  } else if (income() < 0) {
+    console.log("give a positive number");
   }
+  // for expenses
   const expenses = document.getElementById("expenses");
-
+  let showExpenses = expenses.innerHTML;
   if (isNaN(totalExpenses())) {
     console.log("geive a two");
   } else if (totalExpenses() > 0) {
-    expenses.innerHTML = totalExpenses();
+    showExpenses = totalExpenses();
+  } else if (totalExpenses() < 0) {
+    console.log("give a positive number");
+  }
+
+  //   for corrent balance
+  if (showExpenses <= showBalance) {
+    expenses.innerHTML = showExpenses;
+    balance.innerHTML = showBalance - showExpenses;
+  } else {
+    console.log("too");
   }
 
   const incomeInput = document.getElementById("income");
@@ -42,4 +57,7 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
 });
 
 // save Btn event hendlar
-document.getElementById("saveBtn").addEventListener("click", function () {});
+document.getElementById("saveBtn").addEventListener("click", function () {
+    const balance = document.getElementById("balance");
+    
+});
