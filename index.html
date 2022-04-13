@@ -17,7 +17,102 @@
         Money Manager💰💵💶
       </h1>
     </header>
+    <main class="container mx-auto">
+      <section class="grid grid-cols-1 gap-5 lg:grid-cols-2 md:grid-cols-1">
+        <div>
+          <img src="./images/money.jpg" alt="" srcset="" />
+        </div>
+        <div class="bg-slate-200 py-6 flex flex-col items-center">
+          <div>
+            <div>
+              <h4 class="text-3xl text-center font-semibold">Income</h4>
+              <span class="pb-4 pt-2 inline-block">
+                <p class="inline-block text-xl">Income: &nbsp;</p>
+                <input
+                  class="bg-gray-300 rounded"
+                  type="number"
+                  name=""
+                  id="income"
+                />
+              </span>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h4 class="text-3xl text-center font-semibold">Expenses</h4>
+              <span class="py-2 inline-block">
+                <p class="inline-block text-xl">Food: &nbsp;</p>
+                <input
+                  class="bg-gray-300 rounded"
+                  type="number"
+                  name=""
+                  id="food"
+                />
+              </span>
+            </div>
+            <div>
+              <span class="py-2 inline-block">
+                <p class="inline-block text-xl">Rent: &nbsp;</p>
+                <input
+                  class="bg-gray-300 rounded"
+                  type="number"
+                  name=""
+                  id="rent:"
+                />
+              </span>
+            </div>
+            <div>
+              <span class="pt-2 pb-4 inline-block">
+                <p class="inline-block text-xl">Clothes: &nbsp;</p>
+                <input
+                  class="bg-gray-300 rounded"
+                  type="number"
+                  name=""
+                  id="clothes:"
+                />
+              </span>
+            </div>
+            <button
+              id="calculateBtn"
+              class="bg-blue-600 py-1 px-2 rounded font-medium text-white"
+            >
+              Calculate
+            </button>
+            <h4 class="text-3xl text-center font-semibold py-3">
+              Total Expenses: 5500
+            </h4>
+            <h4 class="text-3xl text-center font-semibold">Balance: 4500</h4>
+          </div>
+          <div>
+            <span>
+              <span class="py-2 inline-block">
+                <p class="inline-block text-xl">Save: &nbsp;</p>
+                <input
+                  class="bg-gray-300 rounded w-40"
+                  type="number"
+                  name=""
+                  id="rent:"
+                />
+                <p class="inline-block text-xl">&nbsp;%&nbsp;</p>
+              </span>
 
+              <button
+                id="saveBtn"
+                class="bg-blue-600 py-1 px-2 rounded font-medium text-white"
+              >
+                Save
+              </button>
+            </span>
+            <h4 class="text-3xl text-center font-semibold py-2">
+              Saving Amount: 2000
+            </h4>
+            <h4 class="text-3xl text-center font-semibold">
+              Remaining Balance: 2500
+            </h4>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- add javascript -->
     <script src="./js/app.js"></script>
   </body>
