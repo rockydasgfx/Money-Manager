@@ -1,24 +1,15 @@
-function income() {
-  const incomeInput = document.getElementById("income");
-  const getIncomeText = incomeInput.value;
-  const income = parseInt(getIncomeText);
+function getInput(inputFeild) {
+  const getInput = document.getElementById(inputFeild);
+  const getInputText = getInput.value;
+  const input = parseInt(getInputText);
 
-  return income;
+  return input;
 }
 function totalExpenses() {
-  const foodInput = document.getElementById("food");
-  const rentInput = document.getElementById("rent");
-  const clothesInput = document.getElementById("clothes");
-
-  const foodInputText = foodInput.value;
-  const rentInputText = rentInput.value;
-  const clothesInputText = clothesInput.value;
-
-  const totalExpenses =
-    parseInt(foodInputText) +
-    parseInt(rentInputText) +
-    parseInt(clothesInputText);
-
+  const food = getInput("food");
+  const rent = getInput("rent");
+  const clothes = getInput("clothes");
+  const totalExpenses = food + rent + clothes;
   return totalExpenses;
 }
 // calculate Btn event hendlar
@@ -26,11 +17,11 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
   // for balance
   const balance = document.getElementById("balance");
   let showBalance = balance.innerHTML;
-  if (isNaN(income())) {
+  if (isNaN(getInput("income"))) {
     console.log("geive a nlumm");
-  } else if (income() > 0) {
-    showBalance = income();
-  } else if (income() < 0) {
+  } else if (getInput("income") > 0) {
+    showBalance = getInput("income");
+  } else if (getInput("income") < 0) {
     console.log("give a positive number");
   }
   // for expenses
@@ -58,6 +49,15 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
 
 // save Btn event hendlar
 document.getElementById("saveBtn").addEventListener("click", function () {
-    const balance = document.getElementById("balance");
-    
+  const income = getInput("income");
+  const saveInput = getInput("save");
+  const totalSaving = (income * saveInput) / 100;
+  const saving = document.getElementById("saving");
+  const balance = document.getElementById("balance");
+  const correntBalance = balance.innerHTML;
+  if (totalSaving <= correntBalance) {
+    saving.innerHTML = totalSaving;
+  } else {
+    console.log("not save");
+  }
 });
