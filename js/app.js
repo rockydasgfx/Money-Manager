@@ -68,6 +68,7 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
 
 // save Btn event hendlar
 document.getElementById("saveBtn").addEventListener("click", function () {
+  //get income input
   let income;
   if (isNaN(getInput("income"))) {
     errors[0].classList.remove("hidden");
@@ -82,11 +83,14 @@ document.getElementById("saveBtn").addEventListener("click", function () {
     errors[2].classList.add("hidden");
     errors[3].classList.add("hidden");
   }
-
+  // get saving input
   const saveInput = getInput("save");
   const totalSaving = (income * saveInput) / 100;
+
+  // get save Element
   const saving = document.getElementById("saving");
 
+  // get balance Element
   const balance = document.getElementById("balance");
   const correntBalance = balance.innerHTML;
 
